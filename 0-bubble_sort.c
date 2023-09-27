@@ -20,12 +20,14 @@ void bubble_sort(int *array, size_t size)
 {
 	size_t i;
 	size_t j;
+	bool swapped_flag;
 
 	if (array == NULL || size < 2)
 		return;
 
 	for (i = 0; i < size - 1; i++)
 	{
+		swapped_flag = false;
 		/*if not swapped, it remains 0*/
 		for (j = 0; j < size - i - 1; j++)
 		{
@@ -33,6 +35,11 @@ void bubble_sort(int *array, size_t size)
 			{
 				swap(&array[j], &array[j + 1]);
 				print_array(array, size);
+				swapped_flag = true;
+			}
+			if (!swapped)
+			{
+				break;
 			}
 		}
 		size--;
