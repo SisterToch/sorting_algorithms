@@ -37,11 +37,11 @@ void bubble_sort(int *array, size_t size)
 				print_array(array, size);
 				swapped_flag = true;
 			}
-			if (!swapped)
+			if (!swapped_flag)
 			{
-				break;
+				continue;
 			}
 		}
-		size--;
+	
 	}
 }
